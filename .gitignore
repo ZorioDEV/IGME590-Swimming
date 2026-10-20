@@ -11,7 +11,9 @@
 /[Oo]bj/
 /[Bb]uild/
 /[Bb]uilds/
+/[Mm]emoryCaptures/
 /[Ll]ogs/
+/[Vv]REmulator/
 /[Uu]ser[Ss]ettings/
 *.log
 
