@@ -183,11 +183,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 168232188}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 601f071f588b36049b29fe3c10ba5cfc, type: 3}
+  m_Script: {fileID: 11500000, guid: afff6db8975b261478cccd358c919d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwimmingSystem.WaterVolume
   surfaceOverride: {fileID: 0}
-  volumeCollider: {fileID: 0}
 --- !u!1 &334974228
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,13 +859,370 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1299409242}
+    - targetCorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1299409241}
+    - targetCorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1299409240}
   m_SourcePrefab: {fileID: 100100000, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
 --- !u!4 &1238591127 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4135013735270702856, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
   m_PrefabInstance: {fileID: 1238591126}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1299409239 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+  m_PrefabInstance: {fileID: 1238591126}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1299409240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299409239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fa2609eb8cc3d04fa0d15a07fde0ed9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SwimmingSystem.MovementModeSwitcher
+  groundController: {fileID: 1299409246}
+  alsoDisableWhileSwimming: []
+  swimController: {fileID: 1299409241}
+  waterDetector: {fileID: 1299409242}
+  startSwimmingAt: 0.6
+  stopSwimmingAt: 0.4
+  onStartedSwimming:
+    m_PersistentCalls:
+      m_Calls: []
+  onStoppedSwimming:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1299409244}
+        m_TargetAssemblyTypeName: StarterAssets.StarterAssetsInputs, Unity.StarterAssets
+        m_MethodName: JumpInput
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1299409241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299409239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e94664160452f4196034e2a1542180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SwimmingSystem.SwimController
+  cameraTransform: {fileID: 0}
+  waterDetector: {fileID: 1299409242}
+  moveAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Swim Move
+      m_Type: 0
+      m_ExpectedControlType: Vector2
+      m_Id: 6266ec58-805f-4cc1-819d-0af488aaa345
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 2DVector
+        m_Id: e4ec395b-84ed-4046-bc20-0bd6c5a705ac
+        m_Path: 2DVector
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Swim Move
+        m_Flags: 4
+      - m_Name: Up
+        m_Id: ae09e33c-1586-4f35-98dc-2e12a89da9f9
+        m_Path: <Keyboard>/w
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Swim Move
+        m_Flags: 8
+      - m_Name: Down
+        m_Id: 74135416-2456-4843-b043-7703d69b02b4
+        m_Path: <Keyboard>/s
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Swim Move
+        m_Flags: 8
+      - m_Name: Left
+        m_Id: 1187673b-a6a2-45a3-9583-08759bb509c9
+        m_Path: <Keyboard>/a
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Swim Move
+        m_Flags: 8
+      - m_Name: Right
+        m_Id: 82a5cfb6-93ac-4986-b67e-a536ae8bf54d
+        m_Path: <Keyboard>/d
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Swim Move
+        m_Flags: 8
+      - m_Name: 2DVector
+        m_Id: a0a45636-67a7-4abb-b1b4-8898bcfe0150
+        m_Path: 2DVector
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Swim Move
+        m_Flags: 4
+      - m_Name: Up
+        m_Id: 9726f4ff-b604-473b-802f-9cb79a55af00
+        m_Path: <Keyboard>/upArrow
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Swim Move
+        m_Flags: 8
+      - m_Name: Down
+        m_Id: c416b0ac-475a-416e-ae07-5345af82f256
+        m_Path: <Keyboard>/downArrow
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Swim Move
+        m_Flags: 8
+      - m_Name: Left
+        m_Id: 2892a271-6d09-4c5a-9043-b390b0d353f3
+        m_Path: <Keyboard>/leftArrow
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Swim Move
+        m_Flags: 8
+      - m_Name: Right
+        m_Id: 3f16c32a-4f30-4e24-a4b4-4037ccc2b591
+        m_Path: <Keyboard>/rightArrow
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Swim Move
+        m_Flags: 8
+      - m_Name: 
+        m_Id: 0249dd19-dfbf-407c-a4be-dc967795ecf0
+        m_Path: <Gamepad>/leftStick
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Swim Move
+        m_Flags: 0
+      m_Flags: 0
+      m_Priority: 0
+    m_Reference: {fileID: 0}
+  ascendAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Swim Up
+      m_Type: 1
+      m_ExpectedControlType: 
+      m_Id: a4917dd5-7983-48a8-885d-6faad9292469
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 80d3a116-7478-4ed1-bc38-a7b27528ae9c
+        m_Path: <Keyboard>/space
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Swim Up
+        m_Flags: 0
+      - m_Name: 
+        m_Id: d292a0e0-3c83-4622-bf79-39366e156ae2
+        m_Path: <Gamepad>/buttonSouth
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Swim Up
+        m_Flags: 0
+      m_Flags: 0
+      m_Priority: 0
+    m_Reference: {fileID: 0}
+  descendAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Swim Down
+      m_Type: 1
+      m_ExpectedControlType: 
+      m_Id: 76debbad-b403-44dd-9e01-697ac73efe7d
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 4ecdbec2-8bcb-4717-a0fa-af4fae8250aa
+        m_Path: <Keyboard>/leftCtrl
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Swim Down
+        m_Flags: 0
+      - m_Name: 
+        m_Id: 7bb2287c-7419-4d22-b282-2374c543b8e1
+        m_Path: <Keyboard>/c
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Swim Down
+        m_Flags: 0
+      - m_Name: 
+        m_Id: 8629d3f8-3e33-4b5f-92f1-16a8ca948ab6
+        m_Path: <Gamepad>/buttonEast
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Swim Down
+        m_Flags: 0
+      m_Flags: 0
+      m_Priority: 0
+    m_Reference: {fileID: 0}
+  sprintAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Swim Fast
+      m_Type: 1
+      m_ExpectedControlType: 
+      m_Id: 69b9f444-3b9a-47ee-824d-91346c740de8
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: adac1dab-8c60-4ed3-a270-6a2ae3460a70
+        m_Path: <Keyboard>/leftShift
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Swim Fast
+        m_Flags: 0
+      - m_Name: 
+        m_Id: fa906cfd-7503-416d-9e18-54be4e54fb29
+        m_Path: <Gamepad>/leftStickPress
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Swim Fast
+        m_Flags: 0
+      m_Flags: 0
+      m_Priority: 0
+    m_Reference: {fileID: 0}
+  swimSpeed: 4
+  sprintMultiplier: 1.6
+  verticalSpeed: 3
+  acceleration: 4
+  waterDrag: 2
+  highSpeedDrag: 4
+  waterBuoyancy: 0.5
+  maxEntrySpeed: 15
+  eyeHeightAboveWater: 0.15
+  surfaceSnapDepth: 0.5
+  floatStrength: 3
+  diveAngle: 15
+  bobAmplitude: 0.03
+  bobFrequency: 0.4
+  enableClimbOut: 1
+  maxClimbHeight: 1
+  climbSpeed: 3.5
+  climbableLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  handleLook: 1
+  lookAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Swim Look
+      m_Type: 0
+      m_ExpectedControlType: Vector2
+      m_Id: dd78b83b-c9cd-41b6-831d-10626bd255a4
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 4c1a5e30-6da2-4b96-94a7-7141e7194db9
+        m_Path: <Mouse>/delta
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Swim Look
+        m_Flags: 0
+      - m_Name: 
+        m_Id: ce13ef4c-7b50-41ef-ab6f-71130db5b934
+        m_Path: <Gamepad>/rightStick
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Swim Look
+        m_Flags: 0
+      m_Flags: 0
+      m_Priority: 0
+    m_Reference: {fileID: 0}
+  pitchTransform: {fileID: 1238591127}
+  mouseSensitivity: 0.1
+  stickSensitivity: 150
+  pitchLimit: 89
+  currentVelocity: {x: 0, y: 0, z: 0}
+  atSurface: 0
+  climbing: 0
+--- !u!114 &1299409242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299409239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752dfd628c6a27f4c80cf8bb47373828, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SwimmingSystem.PlayerWaterDetector
+  playerCollider: {fileID: 0}
+  eyeLevel: {fileID: 1238591127}
+  waterVolumes: []
+  submergedFraction: 0
+  inWater: 0
+  headUnderwater: 0
+--- !u!114 &1299409244 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5420857361349278248, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+  m_PrefabInstance: {fileID: 1238591126}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299409239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e087ecce43ebbff45a1b360637807d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1299409246 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+  m_PrefabInstance: {fileID: 1238591126}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299409239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55919ac34a26952479f3fc91f777b2fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1793991697
 PrefabInstance:
   m_ObjectHideFlags: 0
